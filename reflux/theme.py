@@ -29,7 +29,7 @@ class Theme(object):
         except ValueError:
             return None
     
-    def make(self):
+    def build(self):
         js = JS
         css = ""
 

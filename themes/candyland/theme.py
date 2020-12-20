@@ -1,7 +1,7 @@
 import reflux
 
 t = reflux.Theme({
-    "name": "Candyland!",
+    "name": "Candyland",
     "author": "IreTheKID",
     "description": "Turn your Repl IDE into a candy wonderland!",
     "default": "light"
@@ -34,4 +34,4 @@ t.set_colors({
     "positive-transparent-3": "rgba(255, 20, 147, 0.12)",
 })
 
-open("themes/candyland/theme.min.js", "w+").write(t.make())
+open("themes/candyland/theme.min.js", "w+").write(t.build())
