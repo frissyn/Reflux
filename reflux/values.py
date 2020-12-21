@@ -21,9 +21,9 @@ TOKENS = [
 ]
 
 DEFAULT = {
-    "name": "None",
-    "author": "None",
-    "description": "None",
+    "name": None,
+    "author": None,
+    "description": None,
     "default": "light"
 }
 
