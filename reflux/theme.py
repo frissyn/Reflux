@@ -16,9 +16,11 @@ class Theme(object):
         self.obj["colors"] = COLORS[obj["default"]]
     
     def set_color(self, name: str, value: str):
-        self.obj["colors"] = update(self.obj["colors"], {name: value})
+        target = self.obj["colors"][name]
 
-        return None
+        target = value
+
+        return target
 
     def set_colors(self, obj: dict):
         self.obj["colors"] = update(self.obj["colors"], obj)
