@@ -36,7 +36,7 @@ javascript:(function() {
             `);
 
             head.appendChild(style);
-            alert("Reflux is now running!\n\nName: !name!\nAuthor: !author!\nDescription: !description!");
+            alert("Reflux is now running!");
         } else {
             alert("Reflux operation cancelled.");
         }
