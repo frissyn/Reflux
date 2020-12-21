@@ -24,10 +24,10 @@ t.set_colors({
     "positive-3": "#00009f",
     "positive-4": "#0000b2",
 
-    "foreground-1": "#5c2e8a",
-    "foreground-2": "#52297c",
-    "foreground-3": "#49246d",
-    "foreground-4": "#3f1f5e",
+    "foreground-1": "#590059",
+    "foreground-2": "#450045",
+    "foreground-3": "#320032",
+    "foreground-4": "#1e001e",
 
     "positive-transparent-1": "rgba(0, 0, 139, 0.48)",
     "positive-transparent-2": "rgba(0, 0, 139, 0.24)",
