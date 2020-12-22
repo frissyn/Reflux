@@ -31,9 +31,10 @@ class Theme(object):
         except ValueError:
             return None
     
-    def build(self):
+    def build(self, path, mode="w+"):
         js = JS
         css = ""
+        file = open(path, mode)
 
         for n, v in self.obj["colors"].items():
             css += f"--color-{n}: {v} !important;"
@@ -53,4 +54,7 @@ class Theme(object):
             .replace(" = ", "=")
         )
 
-        return js
+        file.write(js)
+        file.close()
+
+        return True

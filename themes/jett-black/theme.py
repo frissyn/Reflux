@@ -12,4 +12,4 @@ t = reflux.Theme({
 for n, v in COLORS["dark"].items():
     t.set_color(n, "black")
 
-open("themes/jett-black/theme.min.js", "w+").write(t.build())
+t.build("themes/jett-black/theme.min.js")

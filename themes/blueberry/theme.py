@@ -34,4 +34,4 @@ t.set_colors({
     "positive-transparent-3": "rgba(0, 0, 139, 0.12)",
 })
 
-open("themes/blueberry/theme.min.js", "w+").write(t.build())
+t.build("themes/blueberry/theme.min.js")

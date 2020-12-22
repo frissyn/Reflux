@@ -34,4 +34,4 @@ t.set_colors({
     "positive-transparent-3": "rgba(255, 20, 147, 0.12)",
 })
 
-open("themes/candyland/theme.min.js", "w+").write(t.build())
+t.build("themes/candyland/theme.min.js")
