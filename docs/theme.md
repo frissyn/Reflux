@@ -20,7 +20,7 @@ theme = reflux.Theme({
 | \_\_init\_\_(*obj*)| Initialize the `Theme` object.                                    |
 |:-------------------|:------------------------------------------------------------------|
 
-| Parameters                                                                             |
+| Parameters  |                 |                                                        |
 |:------------|:----------------|:-------------------------------------------------------|
 | name        | `str` or `None` | Name of the theme. Defaults to `None`.                 |
 | author      | `str` or `None` | Author of the theme. Defaults to `None`.               |
@@ -34,7 +34,7 @@ theme = reflux.Theme({
 | set_color(*name*, *value*)| Set a color to a given value.                              |
 |:-------------------|:------------------------------------------------------------------|
 
-| Parameters                                                                             |
+| Parameters  |                 |                                                        |
 |:------------|:----------------|:-------------------------------------------------------|
 | name        | `str`           | Name of the color value to be set.                     |
 | value       | `str`           | Any CSS3 compatible color value.                       |
@@ -44,7 +44,7 @@ theme = reflux.Theme({
 | set_colors(*obj*)  | Sets multiple colors to the given values in a `dict`.             |
 |:-------------------|:------------------------------------------------------------------|
 
-| Parameters                                                                             |
+| Parameters  |                 |                                                         |
 |:------------|:----------------|:-------------------------------------------------------|
 | obj         | `dict`          | keys are color names, values are color values.         |
 
@@ -53,7 +53,7 @@ theme = reflux.Theme({
 | get_color(*name*)| Get the current value of a given color name. `None` if not found.   |
 |:-------------------|:------------------------------------------------------------------|
 
-| Parameters                                                                             |
+| Parameters  |                 |                                                        |
 |:------------|:----------------|:-------------------------------------------------------|
 | name        | `str`           | Name of the color to get.                              |
 
@@ -62,7 +62,7 @@ theme = reflux.Theme({
 | build(*path*, *mode*)| Builds a JS Reflux theme with the current colors to the given file. |
 |:-------------------|:----------------------------------------------------------------------|
 
-| Parameters                                                                             |
+| Parameters  |                 |                                                        |
 |:------------|:----------------|:-------------------------------------------------------|
 | path        | `str`           | Path to the target file. Should be a valid directory.  |
 | mode        | `str`           | [Mode character](https://docs.python.org/3/library/functions.html#open) to open the file with.|
