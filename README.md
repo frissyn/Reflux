@@ -16,7 +16,12 @@ t = reflux.Theme({
 
 t.set_color("primary-1", "whitesmoke")
 
-open("theme.min.js", "w+").write(t.build())
+t.set_colors({
+    "primary-2": "rbga(255, 255, 255, 0.48)",
+    "primary-3": "hsl(0, 100%, 50%)"
+})
+
+t.build("mytheme.min.js")
 ```
 
 Then copy the resulting JS code into a bookmarklet in your broswer, and run it in your Repl! (Running it again, will prompt you for an option to turn it off). Try it out with the [Candyland](https://github.com/IreTheKID/Reflux/tree/master/themes/candyland) theme!
