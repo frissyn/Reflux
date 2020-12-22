@@ -14,4 +14,11 @@ echo "Executing Distribution..."
 
 python3 -m twine upload dist/*
 
+echo "Dist Done!"
+echo "Removing PKG files/folders..."
+
+rm -r "build"
+rm -r "dist"
+rm -r "reflux.egg-info"
+
 echo "Done!"
