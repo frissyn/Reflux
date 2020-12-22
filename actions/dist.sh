@@ -14,5 +14,4 @@ echo "Executing Distribution..."
 
 python3 -m twine upload dist/*
 
-clear
 echo "Done!"
