@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="reflux",
-    version="0.1.1",
+    version="0.1.2",
     author="IreTheKID",
     author_email="author@example.com",
     description="Python package for creating IDE themes on Repl.it. Uses JavaScript bookmarlets!",
@@ -13,6 +13,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/IreTheKID/Reflux",
     packages=["reflux"],
+    package_data={'': ['a']},
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

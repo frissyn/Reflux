@@ -1,11 +1,10 @@
-import os
+import pkg_resources
 
-cd = os.getcwd()
+js_path = pkg_resources.resource_filename(__name__, "templates/reflux.js")
+css_path = pkg_resources.resource_filename(__name__, "templates/reflux.css")
 
-JS = open(cd + "reflux/assets/main.js").read()
-
-CSS = open(cd + "reflux/assets/main.css").read()
-
+JS = open(js_path).read()
+CSS = open(css_path).read()
 BASE_TOKENS = [f"span.mtk{n}" for n in range(8)]
 
 TOKENS = [
