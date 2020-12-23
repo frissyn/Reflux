@@ -1,6 +1,10 @@
-JS = open("reflux/assets/main.js").read()
+import os
 
-CSS = open("reflux/assets/main.css").read()
+cd = os.getcwd()
+
+JS = open(cd + "reflux/assets/main.js").read()
+
+CSS = open(cd + "reflux/assets/main.css").read()
 
 BASE_TOKENS = [f"span.mtk{n}" for n in range(8)]
 
