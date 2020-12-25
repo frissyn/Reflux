@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="reflux",
-    version="0.1.5",
+    version="0.1.6",
     author="IreTheKID",
     author_email="author@example.com",
     description="Python package for creating IDE themes on Repl.it. Uses JavaScript bookmarlets!",
