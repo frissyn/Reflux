@@ -23,6 +23,7 @@ t.set_colors({
 
 t.build("mytheme.min.js")
 ```
+[![Run on Repl.it](https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png)](https://repl.it/github/sherlock-project/sherlock)
 
 Then copy the resulting JS code into a bookmarklet in your broswer, and run it in your Repl! (Running it again, will prompt you for an option to turn it off). Try it out with the [Candyland](https://github.com/IreTheKID/Reflux/tree/master/themes/candyland) theme!
 
