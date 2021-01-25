@@ -3,6 +3,7 @@ from .values import CSS
 from .values import COLORS
 from .values import DEFAULT
 
+
 def update(stale, new):
     for n, v in new.items():
         stale[n] = v
