@@ -1,11 +1,13 @@
 import setuptools
 
+from reflux import __version__
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="reflux",
-    version="0.1.6",
+    version=__version__,
     author="IreTheKID",
     author_email="author@example.com",
     description="Python package for creating IDE themes on Repl.it. Uses JavaScript bookmarlets!",
