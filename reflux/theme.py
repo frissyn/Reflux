@@ -23,8 +23,9 @@ class Theme(object):
     def set_syntax(self, name: str, value: str):
         pass
     
-    def set_editor(self, value: str):
-        self.obj["code"] += f"{wrap('div.view-lines', value)}"
+    def set_editor(self, name: str, value: str):
+        v = wrap("div.view-lines", f"{name}: {value}")
+        self.obj["code"] += v
 
         return None
     
