@@ -10,11 +10,23 @@ def update(stale, new):
     
     return stale
 
+def wrap(name: str, value: str):
+    return name + "{" + value + " !important}" 
+
 
 class Theme(object):
     def __init__(self, obj):
         self.obj = update(DEFAULT, obj)
         self.obj["colors"] = COLORS[obj["default"]]
+        self.obj["code"] = COLORS["code"]
+    
+    def set_syntax(self, name: str, value: str):
+        pass
+    
+    def set_editor(self, value: str):
+        self.obj["code"] += f"\n{wrap('div.view-lines', value)}"
+
+        return None
     
     def set_color(self, name: str, value: str):
         target = self.obj["colors"][name]
@@ -25,6 +37,8 @@ class Theme(object):
 
     def set_colors(self, obj: dict):
         self.obj["colors"] = update(self.obj["colors"], obj)
+
+        return None
     
     def get_color(self, name: str):
         try:

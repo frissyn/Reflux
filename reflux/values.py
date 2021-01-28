@@ -115,5 +115,7 @@ COLORS = {
         "positive-transparent-1": "rgba(24, 204, 81, 0.48)",
         "positive-transparent-2": "rgba(24, 204, 81, 0.24)",
         "positive-transparent-3": "rgba(24, 204, 81, 0.12)"
-    }
+    },
+
+    "code": """"""
 }
