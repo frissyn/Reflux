@@ -1,7 +1,7 @@
 import reflux
 
 t = reflux.Theme({
-    "name": "Iris",
+    "name": "Iris Flower",
     "author": "frissyn",
     "description": "A dark mix of purple and yellow.",
     "default": "dark"
@@ -25,4 +25,4 @@ t.set_colors({
     "background-4": "#0d0219"
 })
 
-t.build("themes/iris/theme.min.js", "w+")
+t.build("themes/iris-flower/theme.min.js", "w+")

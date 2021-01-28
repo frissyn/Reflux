@@ -2,7 +2,7 @@ import reflux
 
 t = reflux.Theme({
     "name": "Blueberry",
-    "author": "IreTheKID",
+    "author": "frissyn",
     "description": "Make your Repl IDE a blueberry color scheme!",
     "default": "light"
 })

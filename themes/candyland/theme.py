@@ -2,7 +2,7 @@ import reflux
 
 t = reflux.Theme({
     "name": "Candyland",
-    "author": "IreTheKID",
+    "author": "frissyn",
     "description": "Turn your Repl IDE into a candy wonderland!",
     "default": "light"
 })

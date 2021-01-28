@@ -4,7 +4,7 @@ from reflux.values import COLORS
 
 t = reflux.Theme({
     "name": "Jett-Black",
-    "author": "IreTheKID",
+    "author": "frissyn",
     "description": "Lights out >:)",
     "default": "dark"
 })
