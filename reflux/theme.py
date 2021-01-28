@@ -24,7 +24,7 @@ class Theme(object):
         pass
     
     def set_editor(self, value: str):
-        self.obj["code"] += f"\n{wrap('div.view-lines', value)}"
+        self.obj["code"] += f"{wrap('div.view-lines', value)}"
 
         return None
     
