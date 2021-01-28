@@ -58,7 +58,11 @@ class Theme(object):
             if not isinstance(v, dict):
                 js = js.replace(f"!{n}!", str(v))
         
-        css = CSS.replace("!css!", css)
+        css = (
+            CSS
+            .replace("!!css!!", css)
+            .replace("!!syntax!!", self.obj["code"])
+        )
 
         js = (
             js
