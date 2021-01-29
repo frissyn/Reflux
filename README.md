@@ -32,7 +32,7 @@ t.set_colors({
 t.build("mytheme.min.js")
 ```
 
-Then copy the resulting JS code into a bookmarklet in your broswer, and run it in your Repl! (Running it again will prompt you for an option to turn it off). Try it out with one of the premade themes [here](https://github.com/frissyn/Reflux/tree/master/themes)!
+Then copy the resulting JS code into a bookmarklet in your broswer, and run it in your Repl! (Running it again will prompt you for an option to turn it off). Try it out with one of the premade themes [here](https://github.com/frissyn/Reflux/tree/master/themes)! Images of these themes are in their respective folders.
 
 ![iris](https://storage.googleapis.com/replit/images/1611845083584_d6428aecacbdab9478764c700f76a665.png)
 ![candyland](https://storage.googleapis.com/replit/images/1611845281908_6869f49b3d2a3722fbb766c96aeae0cc.png)
