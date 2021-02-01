@@ -2,6 +2,9 @@
 
 Reflux is a tool to create and modify the default styles that apply to your IDE on [Repl.it](https://repl.it/). Using Python, you can create themes, set colors, and generate easy-to-use JavaScript Bookmarlets for use in any Repl. Designed so that those who are unfamiliar with Python can still create themes!
 
+**Recent Update: `v0.2.0`:**
+Reflux themes will now work outside of the IDE more consistently. Rebuild your themes to reflect these changes!
+
 # Overview
 
 ### Installation
