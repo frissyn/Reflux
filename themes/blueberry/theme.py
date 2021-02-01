@@ -4,7 +4,7 @@ t = reflux.Theme({
     "name": "Blueberry",
     "author": "frissyn",
     "description": "Make your Repl IDE a blueberry color scheme!",
-    "default": "light"
+    "default": "dark"
 })
 
 t.set_colors({
