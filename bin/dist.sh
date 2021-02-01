@@ -28,6 +28,6 @@ echo "Dist Done!"
 echo "Removing PKG files/folders..."
 
 rm -r "build"; rm -r "dist"
-rm -r "kitsune.py.egg-info"
+rm -r "reflux.egg-info"
 
 echo "Done!"
