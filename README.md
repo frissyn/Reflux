@@ -1,6 +1,6 @@
-# Reflux: A Repl.it IDE Theming Tool [![Run on Repl.it](https://repl.it/badge/github/frissyn/Reflux)](https://repl.it/github/frissyn/Reflux)
+# Reflux: A Replit.com IDE Theming Tool [![Run on Replit.com](https://replit.com/badge/github/frissyn/Reflux)](https://replit.com/github/frissyn/Reflux)
 
-Reflux is a tool to create and modify the default styles that apply to your IDE on [Repl.it](https://repl.it/). Using Python, you can create themes, set colors, and generate easy-to-use JavaScript Bookmarlets for use in any Repl. Designed so that those who are unfamiliar with Python can still create themes!
+Reflux is a tool to create and modify the default styles that apply to your IDE on [Replit.com](https://replit.com/). Using Python, you can create themes, set colors, and generate easy-to-use JavaScript Bookmarlets for use in any Repl. Designed so that those who are unfamiliar with Python can still create themes!
 
 **Recent Update: `v0.2.0`:**
 Reflux themes will now work outside of the IDE more consistently. Rebuild your themes to reflect these changes!
@@ -13,7 +13,7 @@ Reflux themes will now work outside of the IDE more consistently. Rebuild your t
 |:----------------|:---------------------------------------------|
 |**pip**          |`pip install reflux`                          |
 |**poetry**       |`python -m poetry add reflux`                 |
-|**Repl.it**      |Search `reflux` in the package tab and add it.|
+|**Replit.com**      |Search `reflux` in the package tab and add it.|
 
 ### Quickstart
 
@@ -39,7 +39,7 @@ t.build("mytheme.min.js")
 
 Then copy the resulting JS code into a bookmarklet in your broswer, and run it in your Repl! (Running it again will prompt you for an option to turn it off). Try it out with one of the premade themes [here](https://github.com/frissyn/Reflux/tree/master/themes)! Images of these themes are in their respective folders.
 
-You can find a complete tutorial on Reflux themes [here](https://repl.it/talk/x/x/118029)!
+You can find a complete tutorial on Reflux themes [here](https://replit.com/talk/x/x/118029)!
 
 ### Examples
 
