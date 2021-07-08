@@ -24,7 +24,7 @@ class Theme(object):
         pass
     
     def set_editor(self, value: str):
-        v = wrap("div.lines-content", f"color: {value}")
+        v = wrap("div.lines-content", f"background-color: {value}")
         self.obj["code"] += v
 
         return None
