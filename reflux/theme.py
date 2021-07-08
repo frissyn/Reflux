@@ -24,7 +24,7 @@ class Theme(object):
         pass
     
     def set_editor(self, value: str):
-        v = wrap(".monaco-editor", f"color: {value}")
+        v = wrap("div.lines-content", f"color: {value}")
         self.obj["code"] += v
 
         return None
