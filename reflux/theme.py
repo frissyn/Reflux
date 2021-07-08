@@ -23,8 +23,8 @@ class Theme(object):
     def set_syntax(self, name: str, value: str):
         pass
     
-    def set_editor(self, name: str, value: str):
-        v = wrap("div.view-lines", f"{name}: {value}")
+    def set_editor(self, value: str):
+        v = wrap(".monaco-editor", f"color: {value}")
         self.obj["code"] += v
 
         return None
@@ -78,3 +78,4 @@ class Theme(object):
         file.close()
 
         return True
+
