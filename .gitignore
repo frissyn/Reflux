@@ -1,0 +1,17 @@
+# PYTHON FILES
+# ------------
+dist/
+build/
+*.egg.info/
+__pycache__/
+_*/
+
+# ENVIRON FILES
+# ------------
+main.py
+.env
+.replit
+env/
+venv/
+node_modules/
+package-lock.json
