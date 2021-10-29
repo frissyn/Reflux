@@ -2,8 +2,6 @@ from .theme import Theme
 
 from .resources import path
 
-print(path)
-
 __all__ = ["Theme"]
 
 __author__ = "frissyn"
