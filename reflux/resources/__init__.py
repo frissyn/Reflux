@@ -21,7 +21,10 @@ class Resources(object):
 
         for line in contents.split(";\n"):
             k, v = line.split(":")
-            k = k.replace("--", "")
+            
+            if k[:2] == "--":
+                k = k.replace("--", "")
+
             jar[k] = v[1:]
 
         return jar
