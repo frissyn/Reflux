@@ -1,21 +1,19 @@
 from app import db
 
-from datetime import datetime
-
-from flask_login import UserMixin
+from datetime import datetime as dt
 
 from sqlalchemy.inspection import inspect
 
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    pfp = db.Column(db.String, nullable=False)
-    name = db.Column(db.String(64), nullable=False)
+class User(db.Model):
+    id          = db.Column(db.Integer, primary_key=True)
+    avatar      = db.Column(db.String, nullable=False)
+    name        = db.Column(db.String(64), nullable=False)
+    description = db.Column(db.String, nullable=False)
     publish_key = db.Column(db.String(32), nullable=False)
-    admin = db.Column(db.Boolean, nullable=False, default=False)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow(), nullable=False)
-
-    themes = db.relationship("Theme", backref="creator", lazy=True)
+    admin       = db.Column(db.Boolean, nullable=False, default=False)
+    timestamp   = db.Column(db.DateTime, default=dt.utcnow(), nullable=False)
+    themes      = db.relationship("Theme", backref="creator", lazy=True)
 
     def cereal(self, admin=False):
         result = {c: getattr(self, c) for c in inspect(self).attrs.keys()}
@@ -31,11 +29,14 @@ class User(db.Model, UserMixin):
 
 
 class Theme(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    referral = db.Column(db.String(16), nullable=False)
-    styling = db.Column(db.Text, nullable=False)
+    id        = db.Column(db.Integer, primary_key=True)
+    styling   = db.Column(db.Text, nullable=False)
+    referral  = db.Column(db.String(16), nullable=False)
+    downloads = db.Column(db.Integer, nullable=False, default=0)
+    author    = db.Column(db.Integer, db.ForeignKey("user.id"))
 
-    author = db.Column(db.Integer, db.ForeignKey("user.id"))
+    def cereal(self, admin=False):
+        return {c: getattr(self, c) for c in inspect(self).attrs.keys()}
     
     def __repr__(self):
-        return f"<Theme @author:{self.author} @referral:{self.referral}>"
+        return f"<Theme @author:{self.author.name} @referral:{self.referral}>"
