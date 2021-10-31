@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+function propmt_clear() {
+    echo -n "clear? >> "
+    read res
+
+    if [ $res == "y" ]; then
+        clear
+    fi
+}
+
+echo "Upgrading Dist Tools..."
+pip install --upgrade setuptools wheel twine
+propmt_clear
+
+echo "Building Distribution..."
+python3 setup.py sdist bdist_wheel
+propmt_clear
+
+
+echo "Executing Distribution..."
+python3 -m twine upload dist/*
+propmt_clear
+
+echo "Dist Done!"
+echo "Removing PKG files/folders..."
+
+rm -r "dist"
+rm -r "build"
+rm -r "reflux.egg-info"
+
+echo "Done!"
