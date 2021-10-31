@@ -11,7 +11,7 @@ from ..models import User
 
 
 def unlock(req):
-    return req.headers.get("PSWD").strip() == os.environ["PSWD"]
+    return req.headers.get("PSWD") == os.environ["PSWD"]
 
 
 @app.route("/user/<uname>", methods=["GET"])
@@ -19,7 +19,7 @@ def get_user(uname):
     data = asyncio.run(replit.get_user(uname))
     user = User.query.get_or_404(data.id)
 
-    return flask.jsonify(user.cereal())
+    return flask.jsonify(user.cereal(admin=unlock(flask.request)))
 
 
 @app.route("/portal/<uname>", methods=["POST"])
@@ -38,10 +38,11 @@ def user_portal(uname: str):
         
         user.publish_key = tok
 
-    user.id        = data.id
-    user.name      = data.name
-    user.pfp       = data.avatar
-    user.timestamp = data.timestamp
+    user.id          = data.id
+    user.name        = data.name
+    user.avatar      = data.avatar
+    user.description = data.bio
+    user.timestamp   = data.timestamp
 
     db.session.add(user)
     db.session.commit()
