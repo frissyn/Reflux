@@ -3,18 +3,18 @@ class Error(Exception):
 
 
 class MissingFieldError(Error):
-    def __init__(self, field, subject):
-        self.field   = field
-        self.subject = subject
+    def __init__(self, name, field):
+        self.name = name
+        self.field = field
     
     def __str__(self):
-        return f"{self.subject} is missing required field: '{self.field}'"
+        return f"{self.name} is missing required field: '{self.field}'"
 
 
 class MissingCategoryError(Error):
-    def __init__(self, cat, subject):
-        self.cat     = cat
-        self.subject = subject
+    def __init__(self, name, cat):
+        self.name = name
+        self.cat = cat
     
     def __str__(self):
-        return f"{self.subject} is missing required category: '{self.cat}'"
+        return f"{self.name} is missing required category: '{self.cat}'"
