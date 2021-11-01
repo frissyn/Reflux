@@ -1,9 +1,14 @@
 import yaml
+import requests
 
 from .resources import shelf
 
+from .errors import RefluxAPIError
+from .errors import NotUploadedError
 from .errors import MissingFieldError
 from .errors import MissingCategoryError
+
+API = "https://api.reflux.repl.co"
 
 class Theme(object):
     def __init__(self, path):
@@ -33,6 +38,12 @@ class Theme(object):
         
         return
     
+    def _raise_for_responses(self, r):
+        if r.status_code >= 400:
+            raise RefluxAPIError(r.status_code, r)
+        else:
+            return
+    
     def to_stylesheet(self, file=None):
         text = ""
 
@@ -53,3 +64,25 @@ class Theme(object):
                 f.write(text)
         
         return text
+    
+    def upload(self, publish_key):
+        r = requests.post(
+            f"{API}/theme/upload",
+                json={
+                "name": self.name,
+                "description": self.description,
+                "stylesheet": self.to_stylesheet(),
+                "publish_key": publish_key
+            }
+        )
+
+        self._raise_for_responses(r)
+        self.data = r.json()
+
+        return self.data
+    
+    def referral(self):
+        try:
+            return self.data["referral"]
+        except:
+            raise NotUploadedError(self.name)
