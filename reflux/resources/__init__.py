@@ -8,8 +8,7 @@ class Resources(object):
         self.categories = ["root", "light", "dark"]
         self.headers = {
             "root": ".replit-ui-theme-root, :root",
-            "light": ".replit-ui-theme-root.light",
-            "dark": ".replit-ui-theme-root.dark"
+            "tokens": ".replit-ui-theme-root.light, .replit-ui-theme-root.dark",
         }
         
         for file in os.scandir(f"{path}/variables"):

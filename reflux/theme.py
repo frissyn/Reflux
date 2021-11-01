@@ -14,18 +14,13 @@ class Theme(object):
 
         self.name = data["Meta"]["name"]
         self.description = data["Meta"]["description"]
+        self.styles = {"root": shelf.root, "tokens": shelf.dark}
 
-        self.styles = {
-            "root": shelf.root,
-            "light": shelf.light,
-            "dark": shelf.dark
-        }
-
-        for c in shelf.categories:
-            category = data["Styles"].get(c)
-
-            if category:
-                self.styles[c].update(data["Styles"][c])
+        if data["Styles"].get("root"):
+            self.styles["root"].update(data["Styles"]["root"])
+        
+        if data["Styles"].get("tokens"):
+            self.styles["tokens"].update(data["Styles"]["tokens"])
 
     def _raise_for_errors(self, d):
         for t in ["Meta", "Styles"]:
@@ -41,14 +36,17 @@ class Theme(object):
     def to_stylesheet(self, file=None):
         text = ""
 
-        for key in self.styles.keys():
-            text += shelf.headers[key] + " {"
+        for header in ["root", "tokens"]:
+            if self.styles.get(header):
+                text += shelf.headers[header] + "{"
 
-            for k, v in self.styles[key].items():
-                if not k.startswith("_") and k != "":
-                    text += f"{k}: {v} !important;"
-            
-            text += "}"
+                for token, value in self.styles[header].items():
+                    if not token.startswith("_") and token != "":
+                        text += f"{token}: {value} !important;"
+                
+                text += "}"
+        
+        text = text.replace(" !important;}", "}")
         
         if file:
             with open(file, "w+") as f:
