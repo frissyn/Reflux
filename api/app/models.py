@@ -19,7 +19,7 @@ class User(db.Model):
 
     def cereal(self, admin=False):
         result = {c: getattr(self, c) for c in inspect(self).attrs.keys()}
-        result["themes"] = [t.cereal() for t in result["themes"]]
+        result["themes"] = [t.cereal(partial=True) for t in result["themes"]]
 
         if not admin: 
             result.pop("admin")
@@ -40,10 +40,21 @@ class Theme(db.Model):
     description = db.Column(db.String, nullable=False, default="")
     author_id   = db.Column(db.Integer, db.ForeignKey("user.id"))
 
-    def cereal(self, admin=False):
+    def cereal(self, admin=False, partial=False):
         result = {c: getattr(self, c) for c in inspect(self).attrs.keys()}
 
-        result.pop("author")
+        if partial:
+            result.pop("author")
+        else:
+            a = self.author
+            author = {c.name: getattr(a, c.name) for c in a.__table__.columns}
+
+            result["author"] = author
+            result.pop("author_id")
+
+            if not admin:
+                result["author"].pop("admin")
+                result["author"].pop("publish_key")
 
         return result
     
