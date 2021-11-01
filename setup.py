@@ -23,6 +23,7 @@ setuptools.setup(
 
     include_package_data=True,
     python_requires=">=3.8.0",
+    install_requires=["pyyaml>=6.0"],
 
     classifiers=[
         "License :: OSI Approved :: MIT License",
