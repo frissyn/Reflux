@@ -1,11 +1,12 @@
 class Error(Exception):
     pass
 
+
 class RefluxAPIError(Error):
     def __init__(self, code, context):
         self.code = code
         self.error = ""
-        self.context = context.body
+        self.context = context.content()
 
         if self.code == 400:
             self.error = "Theme could not be formatted correctly."
@@ -16,6 +17,7 @@ class RefluxAPIError(Error):
     
     def __str__(self):
         return f"{self.error}\nRaw response:{self.context}"
+
 
 class NotUploadedError(Error):
     def __init__(self, name):

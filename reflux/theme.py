@@ -1,7 +1,7 @@
 import yaml
 import requests
 
-from .resources import shelf
+from resources import shelf
 
 from .errors import RefluxAPIError
 from .errors import NotUploadedError
