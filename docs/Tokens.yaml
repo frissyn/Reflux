@@ -1,0 +1,153 @@
+Meta:
+    name: Tokens
+    description: Base token values for Replit's Design System
+
+Styles:
+    root:
+        --border-radius-1: 1px
+        --border-radius-2: 2px
+        --border-radius-4: 4px
+        --border-radius-8: 8px
+        --border-radius-16: 16px
+        --border-radius-default: var(--border-radius-8)
+        --border-radius-round: 1028px
+
+        --space-2: 2px
+        --space-4: 4px
+        --space-8: 8px
+        --space-12: 12px
+        --space-16: 16px
+        --space-24: 24px
+        --space-32: 32px
+        --space-48: 48px
+        --space-64: 64px
+        --space-128: 128px
+        --space-256: 256px
+        --space-default: var(--space-8)
+
+        --shadow-1: 0px 4px 8px 0px rgba(2, 2, 3, 0.16)
+        --shadow-2: 0px 8px 16px 0px rgba(2, 2, 3, 0.32)
+        --shadow-3: 0px 16px 32px 0px rgba(2, 2, 3, 0.48)
+        --shadow-default: var(--shadow-1)
+
+        --font-family-default: "IBM Plex Sans", sans-serif
+        --font-family-code: "IBM Plex Mono", monospace
+        --font-size-small: 12px
+        --line-height-small: 1.5
+        --font-size-default: 14px
+        --line-height-default: 1.6
+        --font-size-subhead-default: 16px
+        --line-height-subhead-default: 1.375
+        --font-size-subhead-big: 20px
+        --line-height-subhead-big: 1.2
+        --font-size-header-default: 24px
+        --line-height-header-default: 1
+        --font-size-header-big: 32px
+        --line-height-header-big: 1
+        --font-weight-regular: 400
+        --font-weight-medium: 500
+        --font-weight-bold: 600
+        --border-width-default: 1px
+        --single-line: 1
+
+        --black: "#0e1525"
+        --white: "#fcfcfc"
+    tokens:
+        --background-root: "#0e1525"
+        --background-default: "#1c2333"
+        --background-higher: "#2b3245"
+        --background-highest: "#3c445c"
+        --background-overlay: "#0e1525a0"
+
+        --foreground-default: "#f5f9fc"
+        --foreground-dimmer: "#c2c8cc"
+        --foreground-dimmest: "#9da2a6"
+
+        --outline-default: "#70788c"
+        --outline-default-25: "#70788c40"
+        --outline-dimmer: "#5f677a"
+        --outline-dimmest: "#4e5569"
+
+        --accent-primary-strongest: "#c7e9ff"
+        --accent-primary-stronger: "#85ceff"
+        --accent-primary-default: "#0099ff"
+        --accent-primary-dimmer: "#0072bd"
+        --accent-primary-dimmest: "#004d80"
+
+        --accent-positive-strongest: "#bfffca"
+        --accent-positive-stronger: "#96ffa8"
+        --accent-positive-default: "#2fc448"
+        --accent-positive-dimmer: "#0f7a21"
+        --accent-positive-dimmest: "#0c4516"
+
+        --accent-negative-strongest: "#ffbfbf"
+        --accent-negative-stronger: "#ff8585"
+        --accent-negative-default: "#f23f3f"
+        --accent-negative-dimmer: "#8f2828"
+        --accent-negative-dimmest: "#573a3a"
+
+        --accent-red-dimmest: "#6e0000"
+        --accent-red-dimmer: "#a60000"
+        --accent-red-default: "#e50000"
+        --accent-red-stronger: "#ff8585"
+        --accent-red-strongest: "#ffc7c7"
+
+        --accent-orange-dimmest: "#753b00"
+        --accent-orange-dimmer: "#9c4e00"
+        --accent-orange-default: "#d96d00"
+        --accent-orange-stronger: "#ffc285"
+        --accent-orange-strongest: "#ffd9b2"
+
+        --accent-yellow-dimmest: "#756200"
+        --accent-yellow-dimmer: "#a68a00"
+        --accent-yellow-default: "#ccad14"
+        --accent-yellow-stronger: "#ffea7f"
+        --accent-yellow-strongest: "#fff2b2"
+
+        --accent-green-dimmest: "#00540e"
+        --accent-green-dimmer: "#007814"
+        --accent-green-default: "#36b24a"
+        --accent-green-stronger: "#66ff7f"
+        --accent-green-strongest: "#b2ffbf"
+
+        --accent-teal-dimmest: "#005b6e"
+        --accent-teal-dimmer: "#007f99"
+        --accent-teal-default: "#3db4cc"
+        --accent-teal-stronger: "#7feaff"
+        --accent-teal-strongest: "#bff4ff"
+
+        --accent-blue-dimmest: "#004d99"
+        --accent-blue-dimmer: "#005ebd"
+        --accent-blue-default: "#2e8ae5"
+        --accent-blue-stronger: "#7fbfff"
+        --accent-blue-strongest: "#b2d9ff"
+
+        --accent-blurple-dimmest: "#422f9e"
+        --accent-blurple-dimmer: "#563cd6"
+        --accent-blurple-default: "#7559ff"
+        --accent-blurple-stronger: "#a18fff"
+        --accent-blurple-strongest: "#cec4ff"
+
+        --accent-purple-dimmest: "#6c32a6"
+        --accent-purple-dimmer: "#9140e3"
+        --accent-purple-default: "#a64dff"
+        --accent-purple-stronger: "#c78fff"
+        --accent-purple-strongest: "#e2c4ff"
+
+        --accent-magenta-dimmest: "#802680"
+        --accent-magenta-dimmer: "#b031b0"
+        --accent-magenta-default: "#e55ae5"
+        --accent-magenta-stronger: "#ff8aff"
+        --accent-magenta-strongest: "#ffc2ff"
+
+        --accent-pink-dimmest: "#802662"
+        --accent-pink-dimmer: "#b03186"
+        --accent-pink-default: "#e545b0"
+        --accent-pink-stronger: "#ff8ad8"
+        --accent-pink-strongest: "#ffc2eb"
+
+        --accent-grey-dimmest: "#595959"
+        --accent-grey-dimmer: "#666666"
+        --accent-grey-default: "#808080"
+        --accent-grey-stronger: "#999999"
+        --accent-grey-strongest: "#bfbfbf"

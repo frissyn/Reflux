@@ -1,11 +1,12 @@
-# Reflux: A Replit.com IDE Theming Tool [![Run on Replit.com](https://replit.com/badge/github/frissyn/Reflux)](https://replit.com/github/frissyn/Reflux)
+# Reflux <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"> <a href="https://github.com/frissyn/Reflux/releases"><img src="https://img.shields.io/github/release/frissyn/Reflux.svg?style=flat-square"></a> <img src="https://img.shields.io/uptimerobot/ratio/m789613888-63da553f1a743d8870946ed3?style=flat-square">
 
-Reflux is a tool to create and modify the default styles that apply to your IDE on [Replit.com](https://replit.com/). Using Python, you can create themes, set colors, and generate easy-to-use JavaScript Bookmarlets for use in any Repl. Designed so that those who are unfamiliar with Python can still create themes!
+Reflux is a third-party tool for creating and publishing site-wide style themes to Replit! Using Reflux, users can easily change Replit's default CSS variables, and share thier created themes with other users via the [marketplace](https://market.reflux.repl.co/). Find the quickstart example [here](https://replit.com/@reflux/template). Fork it and follow the guide to get started using Reflux and creating themes on Replit!
 
-**Recent Update: `v0.2.0`:**
-Reflux themes will now work outside of the IDE more consistently. Rebuild your themes to reflect these changes!
+### Showcase
 
-# Overview
+![image](https://storage.googleapis.com/replit/images/1635881358588_fb0b7e55745d4ffcdfce7ec2f5c33fd7.png)
+
+![image](https://storage.googleapis.com/replit/images/1635881352143_96390d7d5b4809e8ef1f83a9e2bf8355.png)
 
 ### Installation
 
@@ -13,36 +14,21 @@ Reflux themes will now work outside of the IDE more consistently. Rebuild your t
 |:----------------|:---------------------------------------------|
 |**pip**          |`pip install reflux`                          |
 |**poetry**       |`python -m poetry add reflux`                 |
-|**Replit.com**      |Search `reflux` in the package tab and add it.|
+|**replit**       |Search `reflux` in the Packages tab and `+` it|
 
-### Quickstart
+### Documentation
 
-```python
-import reflux
+Find extensive documentation on Reflux and it uses [here](https://github.com/frissyn/Reflux/tree/master/docs).
 
-t = reflux.Theme({
-    "name": "New Theme",
-    "author": "Your Username",
-    "description": "A simple theme to get started with!",
-    "default": "light"
-})
+### Contributing
 
-t.set_color("primary-1", "whitesmoke")
+1. Fork the repository: [`Fork`](https://github.com/frissyn/Reflux/fork)
+2. Clone locally (`git clone https://github.com/<username>/Reflux.git`)
+3. Create your feature branch (`git checkout -b my-new-feature`)
+4. Commit your changes (`git commit -a -m 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create a new Pull Request! 🎉
 
-t.set_colors({
-    "primary-2": "rbga(255, 255, 255, 0.48)",
-    "primary-3": "hsl(0, 100%, 50%)"
-})
+**Local Developement:**
 
-t.build("mytheme.min.js")
-```
-
-Then copy the resulting JS code into a bookmarklet in your broswer, and run it in your Repl! (Running it again will prompt you for an option to turn it off). Try it out with one of the premade themes [here](https://github.com/frissyn/Reflux/tree/master/themes)! Images of these themes are in their respective folders.
-
-You can find a complete tutorial on Reflux themes [here](https://replit.com/talk/x/x/118029)!
-
-### Examples
-
-![iris](https://storage.googleapis.com/replit/images/1611845083584_d6428aecacbdab9478764c700f76a665.png)
-![candyland](https://storage.googleapis.com/replit/images/1611845281908_6869f49b3d2a3722fbb766c96aeae0cc.png)
-![blueberry](https://storage.googleapis.com/replit/images/1611845384713_7d7bc415e3615439edbcd1fce6576054.png)
+In order to properly test the Reflux package locally run `bash bin/local` in the project directory. `bash bin/clean` will delete the tarball and build directories.

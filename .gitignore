@@ -1,26 +1,17 @@
-main.py
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-build/
-develop-eggs/
+# PYTHON FILES
+# ------------
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+build/
+*.egg.info/
+__pycache__/
+_*/
+
+# ENVIRON FILES
+# ------------
+main.py
 .env
+.replit
 env/
-.lock
-.toml
+venv/
+node_modules/
+package-lock.json

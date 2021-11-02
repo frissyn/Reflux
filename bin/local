@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "Creating local installation of Reflux..."
+pip install -e .
+pip show reflux

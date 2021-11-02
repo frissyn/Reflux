@@ -1,25 +1,37 @@
+import reflux
 import setuptools
 
-from reflux import __version__
-
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+readme = open("README.md").read()
+url = "https://github.com/frissyn/Reflux"
+description = "Extensive styling and theming functionality for Replit."
 
 setuptools.setup(
     name="reflux",
-    version=__version__,
-    author="IreTheKID",
-    author_email="author@example.com",
-    description="Python package for creating IDE themes on Repl.it. Uses JavaScript bookmarlets!",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/IreTheKID/Reflux",
+    license="MIT",
+    description=description,
+    version=reflux.__version__,
     packages=["reflux"],
+    project_urls={
+        "Source Code": url,
+        "Pull Requests": url + "/pulls",
+        "Issue Tracker": url + "/issues",
+        "Documentation": url + "/tree/master/docs"
+    },
+
+    long_description=readme,
+    long_description_content_type="text/markdown",
+
+    python_requires=">=3.7.0",
+    install_requires=["pyyaml"],
     include_package_data=True,
+    package_data={"": ["*.txt", "*.js"]},
+
     classifiers=[
-        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
+        "Intended Audience :: Developers",
         "Operating System :: OS Independent",
-    ],
-    python_requires='>=3.6',
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Topic :: Software Development"
+    ]
 )

@@ -1,81 +1,88 @@
-from .values import JS
-from .values import CSS
-from .values import COLORS
-from .values import DEFAULT
+import yaml
+import requests
 
+from .resources import shelf
 
-def update(stale, new):
-    for n, v in new.items():
-        stale[n] = v
-    
-    return stale
+from .errors import RefluxAPIError
+from .errors import NotUploadedError
+from .errors import MissingFieldError
+from .errors import MissingCategoryError
 
-def wrap(name: str, value: str):
-    return name + "{" + value + " !important}" 
-
+API = "https://api.reflux.repl.co"
 
 class Theme(object):
-    def __init__(self, obj):
-        self.obj = update(DEFAULT, obj)
-        self.obj["colors"] = COLORS[obj["default"]]
-        self.obj["code"] = COLORS["code"]
+    def __init__(self, path):
+        with open(path, "r") as stream:
+            data = yaml.safe_load(stream)
+        
+        self._raise_for_errors(data)
+
+        self.name = data["Meta"]["name"]
+        self.description = data["Meta"]["description"]
+        self.styles = {"root": shelf.root, "tokens": shelf.dark}
+
+        if data["Styles"].get("root"):
+            self.styles["root"].update(data["Styles"]["root"])
+        
+        if data["Styles"].get("tokens"):
+            self.styles["tokens"].update(data["Styles"]["tokens"])
+
+    def _raise_for_errors(self, d):
+        for t in ["Meta", "Styles"]:
+            if not d.get(t):
+                raise MissingCategoryError("Theme", t)
+
+        for f in ["name", "description"]:
+            if not d["Meta"].get(f):
+                raise MissingFieldError("Meta", f)
+        
+        return
     
-    def set_syntax(self, name: str, value: str):
-        pass
+    def _raise_for_responses(self, r):
+        if r.status_code >= 400:
+            raise RefluxAPIError(r.status_code, r)
+        else:
+            return
     
-    def set_editor(self, value: str):
-        v = wrap("div.lines-content", f"background-color: {value}")
-        self.obj["code"] += v
+    def to_stylesheet(self, file=None):
+        text = ""
 
-        return None
+        for header in ["root", "tokens"]:
+            if self.styles.get(header):
+                text += shelf.headers[header] + "{"
+
+                for token, value in self.styles[header].items():
+                    if not token.startswith("_") and token != "":
+                        text += f"{token}: {value} !important;"
+                
+                text += "}"
+        
+        text = text.replace(" !important;}", "}")
+        
+        if file:
+            with open(file, "w+") as f:
+                f.write(text)
+        
+        return text
     
-    def set_color(self, name: str, value: str):
-        target = self.obj["colors"][name]
+    def upload(self, publish_key):
+        r = requests.post(
+            f"{API}/theme/upload",
+                json={
+                "name": self.name,
+                "description": self.description,
+                "stylesheet": self.to_stylesheet(),
+                "publish_key": publish_key
+            }
+        )
 
-        target = value
+        self._raise_for_responses(r)
+        self.data = r.json()
 
-        return target
-
-    def set_colors(self, obj: dict):
-        self.obj["colors"] = update(self.obj["colors"], obj)
-
-        return None
+        return self.data
     
-    def get_color(self, name: str):
+    def referral(self):
         try:
-            return self.obj["colors"][name]
-        except ValueError:
-            return None
-    
-    def build(self, path, mode="w+"):
-        js = JS
-        css = ""
-        file = open(path, mode)
-
-        for n, v in self.obj["colors"].items():
-            css += f"--color-{n}: {v} !important;"
-        
-        for n, v in self.obj.items():
-            if not isinstance(v, dict):
-                js = js.replace(f"!{n}!", str(v))
-        
-        css = (
-            CSS
-            .replace("!!css!!", css)
-            .replace("!!syntax!!", self.obj["code"])
-        )
-
-        js = (
-            js
-            .replace("!css!", css)
-            .replace("\n", "")
-            .replace("\t", "")
-            .replace("    ", "")
-            .replace(" = ", "=")
-        )
-
-        file.write(js)
-        file.close()
-
-        return True
-
+            return self.data["referral"]
+        except:
+            raise NotUploadedError(self.name)

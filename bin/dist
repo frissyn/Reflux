@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function propmt_clear() {
-    echo -n "Clear the screen? >> "
+    echo -n "clear? >> "
     read res
 
-    if [ $res == "yes" ]; then
+    if [ $res == "y" ]; then
         clear
-    else
-        echo "Skipping clear screen..."
     fi
 }
 
@@ -27,7 +25,8 @@ propmt_clear
 echo "Dist Done!"
 echo "Removing PKG files/folders..."
 
-rm -r "build"; rm -r "dist"
+rm -r "dist"
+rm -r "build"
 rm -r "reflux.egg-info"
 
 echo "Done!"
