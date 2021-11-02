@@ -14,7 +14,7 @@ class RefluxAPIError(Error):
             self.error = "Provided publish_key is invalid or expired."
         elif self.code == 500:
             self.error = "The API encounted an internal error, please try again later."
-    
+
     def __str__(self):
         return f"{self.error}\nRaw response:{self.context}"
 
@@ -25,8 +25,8 @@ class NotUploadedError(Error):
 
     def __str__(self):
         return (
-            f"Theme '{self.name}' has no upload data." +
-            " Please upload the theme before getting a referral code."
+            f"Theme '{self.name}' has no upload data."
+            + " Please upload the theme before getting a referral code."
         )
 
 
@@ -34,7 +34,7 @@ class MissingFieldError(Error):
     def __init__(self, name, field):
         self.name = name
         self.field = field
-    
+
     def __str__(self):
         return f"{self.name} is missing required field: '{self.field}'"
 
@@ -43,6 +43,6 @@ class MissingCategoryError(Error):
     def __init__(self, name, cat):
         self.name = name
         self.cat = cat
-    
+
     def __str__(self):
         return f"{self.name} is missing required category: '{self.cat}'"

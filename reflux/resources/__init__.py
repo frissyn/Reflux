@@ -3,6 +3,7 @@ import pathlib
 
 path = pathlib.Path(__file__).parent.resolve()
 
+
 class Resources(object):
     def __init__(self):
         self.categories = ["root", "light", "dark"]
@@ -10,7 +11,7 @@ class Resources(object):
             "root": ".replit-ui-theme-root, :root",
             "tokens": ".replit-ui-theme-root.light, .replit-ui-theme-root.dark",
         }
-        
+
         for file in os.scandir(f"{path}/variables"):
             name = file.name.split(".")[0]
 
@@ -30,5 +31,6 @@ class Resources(object):
             jar[k] = v[1:]
 
         return jar
+
 
 shelf = Resources()
