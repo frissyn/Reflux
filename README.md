@@ -1,13 +1,9 @@
-# ![logo](https://market.reflux.repl.co/static/logosmall.png) Reflux <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"> <a href="https://github.com/frissyn/Reflux/releases"><img src="https://img.shields.io/github/release/frissyn/Reflux.svg?style=flat-square"></a> <img src="https://img.shields.io/uptimerobot/ratio/m789613888-63da553f1a743d8870946ed3?style=flat-square">
+![logo](https://market.reflux.repl.co/static/logosmall.png) 
+# Reflux <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"> <a href="https://github.com/frissyn/Reflux/releases"><img src="https://img.shields.io/github/release/frissyn/Reflux.svg?style=flat-square"></a> <img src="https://img.shields.io/uptimerobot/ratio/m789613888-63da553f1a743d8870946ed3?style=flat-square">
 
-<p>
-<img align="left" src="https://storage.googleapis.com/replit/images/1635880616255_2e51c4e5cb7047a1e3561c05f72f246a.png">
-Reflux is a third-party tool for creating and publishing site-wide style themes to Replit! Using Reflux, users can easily change Replit's default CSS variables, and share thier created themes with other users via the marketplace.
-
----
+Reflux is a third-party tool for creating and publishing site-wide style themes to Replit! Using Reflux, users can easily change Replit's default CSS variables, and share thier created themes with other users via the [marketplace](https://market.reflux.repl.co/).
 
 Find the quickstart example [here](https://replit.com/@reflux/template). Fork it and follow the guide to get started using Reflux and creating themes on Replit!
-</p>
 
 ### Installation
 
