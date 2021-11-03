@@ -1,12 +1,12 @@
 import yaml
 import requests
 
-from resources import shelf
+from reflux.resources import shelf
 
-from .errors import RefluxAPIError
-from .errors import NotUploadedError
-from .errors import MissingFieldError
-from .errors import MissingCategoryError
+from reflux.errors import RefluxAPIError
+from reflux.errors import NotUploadedError
+from reflux.errors import MissingFieldError
+from reflux.errors import MissingCategoryError
 
 API = "https://api.reflux.repl.co"
 

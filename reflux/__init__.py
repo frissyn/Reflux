@@ -1,4 +1,4 @@
-from .theme import Theme
+from reflux.theme import Theme
 
 __all__ = ["Theme"]
 __author__ = "frissyn"
