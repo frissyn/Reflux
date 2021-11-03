@@ -17,13 +17,15 @@ class Resources(object):
 
             if file.is_file() and file.name.endswith(".txt"):
                 contents = open(file).read()
-                jar = self.create_var_jar(contents)
+                jar = self._create_var_jar(contents)
 
                 jar["_keys"] = list(jar.keys())
 
                 self.__setattr__(name, jar)
+        
+        self.engine = "javascript:" + open(f"{path}/../engine/reflux.min.js").read()
 
-    def create_var_jar(self, contents: str):
+    def _create_var_jar(self, contents: str):
         jar = {}
 
         for line in contents.split(";\n"):
