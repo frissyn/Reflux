@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+pip install black
+pip install pyyaml
+
+pip install --upgrade setuptools wheel twine
