@@ -1,4 +1,5 @@
 import yaml
+import pathlib
 import requests
 
 from reflux.resources import shelf
@@ -9,6 +10,7 @@ from reflux.errors import MissingFieldError
 from reflux.errors import MissingCategoryError
 
 API = "https://api.reflux.repl.co"
+PATH = pathlib.Path(__file__).parent.resolve()
 
 
 class Theme(object):
@@ -87,3 +89,16 @@ class Theme(object):
             return self.data["referral"]
         except:
             raise NotUploadedError(self.name)
+
+    def engine(self, file=None):
+        with open(f"{PATH}/engine/theme.min.js", "r") as stream:
+            engine = stream.read()
+
+            engine = "javascript:" + engine
+            engine = engine.replace("{{ referral }}", self.referral())
+
+            if file:
+                with open(file, "w+") as f:
+                    f.write(engine)
+        
+        return engine
