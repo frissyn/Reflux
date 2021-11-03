@@ -1,4 +1,4 @@
-function reflux() {
+(function reflux() {
     let referral = prompt("Enter a Reflux referral code.");
 
     if (referral == null || referral == "") {
@@ -31,4 +31,4 @@ function reflux() {
         })
         .catch(err => alert("Couldn't load theme.\n" + err))
     }
-};
+})();
