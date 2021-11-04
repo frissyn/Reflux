@@ -12,7 +12,7 @@ class Resources(object):
             "tokens": ".replit-ui-theme-root.light, .replit-ui-theme-root.dark",
         }
 
-        for file in os.scandir(f"{path}/variables"):
+        for file in os.scandir(f"{path}/resources/variables"):
             name = file.name.split(".")[0]
 
             if file.is_file() and file.name.endswith(".txt"):
@@ -23,7 +23,7 @@ class Resources(object):
 
                 self.__setattr__(name, jar)
         
-        self.engine = "javascript:" + open(f"{path}/../engine/reflux.min.js").read()
+        self.engine = "javascript:" + open(f"{path}/engine/reflux.min.js").read()
 
     def _create_var_jar(self, contents: str):
         jar = {}
