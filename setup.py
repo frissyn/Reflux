@@ -23,8 +23,8 @@ setuptools.setup(
     python_requires=">=3.7.0",
     install_requires=["pyyaml"],
     
-    zip_safe=False,
-    package_data={"": ["*.txt", "*.js"]},
+    zip_safe=True,
+    package_data={"reflux": ["resources/*.txt", "engine/*.js"]},
 
     classifiers=[
         "License :: OSI Approved :: MIT License",
