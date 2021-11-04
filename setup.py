@@ -3,12 +3,11 @@ import setuptools
 
 readme = open("README.md").read()
 url = "https://github.com/frissyn/Reflux"
-description = "Extensive styling and theming functionality for Replit."
 
 setuptools.setup(
     name="reflux",
     license="MIT",
-    description=description,
+    description=reflux.__doc__,
     version=reflux.__version__,
     packages=["reflux"],
     project_urls={
@@ -23,6 +22,8 @@ setuptools.setup(
 
     python_requires=">=3.7.0",
     install_requires=["pyyaml"],
+    
+    zip_safe=False,
     include_package_data=True,
     package_data={"": ["*.txt", "*.js"]},
 
