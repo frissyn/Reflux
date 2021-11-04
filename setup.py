@@ -24,7 +24,6 @@ setuptools.setup(
     install_requires=["pyyaml"],
     
     zip_safe=False,
-    include_package_data=True,
     package_data={"": ["*.txt", "*.js"]},
 
     classifiers=[
