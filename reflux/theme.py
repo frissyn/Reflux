@@ -13,6 +13,16 @@ API = "https://api.reflux.repl.co"
 PATH = pathlib.Path(__file__).parent.resolve()
 
 
+def make_engine(code: str, file=None):
+    engine = shelf.theme_engine.replace("{{ referral }}", code)
+
+    if file:
+        with open(file, "w+") as stream:
+            stream.write(engine)
+    
+    return engine
+
+
 class Theme(object):
     def __init__(self, path):
         with open(path, "r") as stream:
@@ -91,14 +101,4 @@ class Theme(object):
             raise NotUploadedError(self.name)
 
     def engine(self, file=None):
-        with open(f"{PATH}/engine/theme.min.js", "r") as stream:
-            engine = stream.read()
-
-            engine = "javascript:" + engine
-            engine = engine.replace("{{ referral }}", self.referral())
-
-            if file:
-                with open(file, "w+") as f:
-                    f.write(engine)
-        
-        return engine
+        return make_engine(self.referral(), file)

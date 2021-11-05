@@ -1,6 +1,4 @@
-# import os
 import pathlib
-# import importlib
 
 path = pathlib.Path(__file__).parent
 
@@ -15,6 +13,9 @@ class Resources(object):
 
         self.engine = "javascript:"
         self.engine += path.joinpath("engine/reflux.min.js").read_text()
+
+        self.theme_engine = "javascript:"
+        self.theme_engine += path.joinpath("engine/theme.min.js").read_text()
         
         for c in self.categories:
             content = path.joinpath(f"variables/{c}.txt")
