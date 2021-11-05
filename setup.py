@@ -7,9 +7,11 @@ url = "https://github.com/frissyn/Reflux"
 setuptools.setup(
     name="reflux",
     license="MIT",
+    author="frissyn",
     description=reflux.__doc__,
     version=reflux.__version__,
-    packages=["reflux"],
+
+    url=url,
     project_urls={
         "Source Code": url,
         "Pull Requests": url + "/pulls",
@@ -22,9 +24,10 @@ setuptools.setup(
 
     python_requires=">=3.7.0",
     install_requires=["pyyaml"],
-    
-    zip_safe=True,
-    package_data={"reflux": ["resources/*.txt", "engine/*.js"]},
+
+    zip_safe=False,
+    packages=["reflux"],
+    include_package_data=True,
 
     classifiers=[
         "License :: OSI Approved :: MIT License",
