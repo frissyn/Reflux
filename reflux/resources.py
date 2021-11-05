@@ -1,7 +1,8 @@
-import os
+# import os
 import pathlib
+# import importlib
 
-path = pathlib.Path(__file__).parent.resolve()
+path = pathlib.Path(__file__).parent
 
 
 class Resources(object):
@@ -12,18 +13,16 @@ class Resources(object):
             "tokens": ".replit-ui-theme-root.light, .replit-ui-theme-root.dark",
         }
 
-        for file in os.scandir(f"{path}/resources/variables"):
-            name = file.name.split(".")[0]
-
-            if file.is_file() and file.name.endswith(".txt"):
-                contents = open(file).read()
-                jar = self._create_var_jar(contents)
-
-                jar["_keys"] = list(jar.keys())
-
-                self.__setattr__(name, jar)
+        self.engine = "javascript:"
+        self.engine += path.joinpath("engine/reflux.min.js").read_text()
         
-        self.engine = "javascript:" + open(f"{path}/engine/reflux.min.js").read()
+        for c in self.categories:
+            content = path.joinpath(f"variables/{c}.txt")
+
+            jar = self._create_var_jar(content.read_text())
+            jar["_keys"] = list(jar.keys())
+
+            self.__setattr__(c, jar)
 
     def _create_var_jar(self, contents: str):
         jar = {}
