@@ -61,6 +61,7 @@ class Theme(db.Model):
                 result["author"].pop("admin")
                 result["author"].pop("publish_key")
 
+        main_bg = stylesheet.split("--background-default: ")[0].split(";")
         if "monaco" not in result:
             result["monaco"] = "#1c2333"
 
