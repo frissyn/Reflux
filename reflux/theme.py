@@ -19,7 +19,7 @@ def make_engine(code: str, file=None):
     if file:
         with open(file, "w+") as stream:
             stream.write(engine)
-    
+
     return engine
 
 
@@ -39,6 +39,13 @@ class Theme(object):
 
         if data["Styles"].get("tokens"):
             self.styles["tokens"].update(data["Styles"]["tokens"])
+
+        if "Advanced" in data.keys():
+            if "monaco" in data["Advanced"]:
+                self.monaco = data["Advanced"]["monaco"]
+            if "xterm" in data["Advanced"]:
+                self.xterm = data["Advanced"]["xterm"]
+
 
     def _raise_for_errors(self, d):
         for t in ["Meta", "Styles"]:
@@ -85,6 +92,8 @@ class Theme(object):
                 "name": self.name,
                 "description": self.description,
                 "stylesheet": self.to_stylesheet(),
+                "monaco": self.monaco,
+                "xterm": self.xterm,
                 "publish_key": publish_key,
             },
         )

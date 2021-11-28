@@ -14,12 +14,23 @@ def unlock(req):
     return req.headers.get("PSWD") == os.environ["PSWD"]
 
 
+def lite(themes, req):
+    if req.args.get("lite") in ["True", "true", "1", 1]:
+        for t in themes:
+            t.pop("stylesheet")
+    
+    return themes
+
+
 @app.route("/user/<uname>", methods=["GET"])
 def get_user(uname):
     data = asyncio.run(replit.get_user(uname))
     user = User.query.get_or_404(data.id)
 
-    return flask.jsonify(user.cereal(admin=unlock(flask.request)))
+    user = user.cereal(admin=unlock(flask.request))
+    lite(user["themes"], flask.request)
+
+    return flask.jsonify(user)
 
 
 @app.route("/portal/<uname>", methods=["POST"])

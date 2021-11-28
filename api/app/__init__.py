@@ -22,6 +22,11 @@ app.config.from_mapping({
 
 conn = psycopg2.connect(os.environ["DATABASE_URL"], sslmode="require")
 
+@app.after_request
+def apply_caching(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    
+    return response
 
 tokens = [os.getenv("TOKEN")]
 db = SQLAlchemy(app)
