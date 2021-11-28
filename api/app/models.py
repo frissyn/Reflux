@@ -63,10 +63,10 @@ class Theme(db.Model):
 
         main_bg = self.stylesheet.split("--background-default: ")[1].split(" !important;")[0]
         if "monaco" not in result:
-            result["monaco"] = "#1c2333"
+            result["monaco"] = main_bg
 
         if "xterm" not in result:
-            result["xterm"] = "#1c2333"
+            result["xterm"] = main_bg
 
         return result
 
