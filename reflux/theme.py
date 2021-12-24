@@ -46,7 +46,14 @@ class Theme(object):
             if "xterm" in data["Advanced"]:
                 self.xterm = data["Advanced"]["xterm"]
 
-
+        if "Syntax" in data.keys():
+            data['Syntax']['.ͼl'] = data['Syntax'].pop('keyword', 'var(--accent-purple-stronger)')
+            data['Syntax']['.ͼe'] = data['Syntax'].pop('string', 'var(--accent-orange-stronger)')
+            data['Syntax']['.ͼf'] = data['Syntax'].pop('numeral', 'var(--accent-yellow-stronger)')
+            data['Syntax']['.ͼb'] = data['Syntax'].pop('collection', 'var(--foreground-default)')
+            data['Syntax']['.ͼa'] = data['Syntax'].pop('comment', 'var(--foreground-dimmest)')
+            self.styles['syntax'] = data['Syntax']
+    		
     def _raise_for_errors(self, d):
         for t in ["Meta", "Styles"]:
             if not d.get(t):
@@ -64,7 +71,7 @@ class Theme(object):
         else:
             return
 
-    def to_stylesheet(self, file=None):
+    def to_stylesheet(self, file="theme.css"):
         text = ""
 
         for header in ["root", "tokens"]:
@@ -76,13 +83,14 @@ class Theme(object):
                         text += f"{token}: {value} !important;"
 
                 text += "}"
+    
+        if "syntax" in self.styles:
+            for token, value in self.styles['syntax'].items():
+                 text += token+"{ color :"+value+" !important}"  
 
-        text = text.replace(" !important;}", "}")
-
-        if file:
-            with open(file, "w+") as f:
+        with open(file, "w") as f:
                 f.write(text)
-
+            
         return text
 
     def upload(self, publish_key):
