@@ -46,7 +46,6 @@ class Theme(object):
             if "xterm" in data["Advanced"]:
                 self.xterm = data["Advanced"]["xterm"]
 
-
     def _raise_for_errors(self, d):
         for t in ["Meta", "Styles"]:
             if not d.get(t):
