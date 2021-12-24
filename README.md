@@ -13,7 +13,7 @@ Reflux is a third-party tool for creating and publishing site-wide style themes 
 |Manager          |Command                                       |
 |:----------------|:---------------------------------------------|
 |**pip**          |`pip install reflux`                          |
-|**poetry**       |`python -m poetry add reflux`                 |
+|**poetry**       |`poetry add reflux`                 |
 |**replit**       |Search `reflux` in the Packages tab and `+` it|
 
 ### Documentation
