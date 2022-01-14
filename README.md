@@ -8,6 +8,7 @@ It has truly been a joy working to maintain Reflux, and Reflux will forever rema
 
 (Side note, I was a collaborator on this project. Frissyn always has the last say and could revert this decision at any time 🤪)
 
+___
 
 Reflux is a third-party tool for creating and publishing site-wide style themes to Replit! Using Reflux, users can easily change Replit's default CSS variables, and share thier created themes with other users via the [marketplace](https://market.reflux.repl.co/). Find the quickstart example [here](https://replit.com/@reflux/template). Fork it and follow the guide to get started using Reflux and creating themes on Replit!
 
