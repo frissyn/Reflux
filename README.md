@@ -1,7 +1,8 @@
 # Reflux <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"> <a href="https://github.com/frissyn/Reflux/releases"><img src="https://img.shields.io/github/release/frissyn/Reflux.svg?style=flat-square"></a> <img src="https://img.shields.io/uptimerobot/ratio/m789613888-63da553f1a743d8870946ed3?style=flat-square">
 
-
-#### Replit officialy supports themes now! The team reached out to the developers of this project for feedback, and after... a long hiatus of communication, the Replit team has created a native theme creator and publisher. Thanks for checking out Reflux!
+### NOTICE! ⚠️
+#### Replit officialy supports themes now! The team reached out to the developers of this project for feedback, and after... a long hiatus of communication, the Replit team has created a native theme creator and publisher.
+#### This project will be archived until further notice, thanks for checking out Reflux!
 
 ___
 
